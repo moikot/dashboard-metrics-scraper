@@ -19,6 +19,8 @@ for i in ${arch_list}; do
     manifest_list="${manifest_list} ${container}"
 done;
 
+export DOCKER_CLI_EXPERIMENTAL=enabled
+
 echo "--- docker manifest create --amend ${manifest} ${manifest_list}"
 docker manifest create --amend ${manifest} ${manifest_list}
 
